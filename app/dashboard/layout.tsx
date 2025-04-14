@@ -1,0 +1,22 @@
+import type React from "react"
+import { DashboardNav } from "@/components/dashboard/dashboard-nav"
+import { SidebarProvider, Sidebar, SidebarContent, SidebarInset } from "@/components/ui/sidebar"
+
+export default function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <SidebarProvider>
+      <div className="flex min-h-screen">
+        <Sidebar>
+          <SidebarContent>
+            <DashboardNav />
+          </SidebarContent>
+        </Sidebar>
+        <SidebarInset className="flex-1 p-6 md:p-8">{children}</SidebarInset>
+      </div>
+    </SidebarProvider>
+  )
+}
